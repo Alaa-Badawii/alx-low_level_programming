@@ -1,10 +1,13 @@
-#include <stio.h>
+#include <stdio.h>
 
 /**
-*main-the main
-*description: c program that printes put fun
-*returns always equals 0 , mains successfully
+ * main - the main
+ *
+ * Description: c program that print with put func
+ *
+ *Return: always equals 0 , means successfully.
 */
+
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
