@@ -1,11 +1,13 @@
 #include <stdio.h>
+
 /**
-*main-the main
-*description:script that prints the size of various 
-*on the computer it is comppiled
-*
-*return always :0 ;
+ * main - entry point
+ *
+ * Description: using sizeof to print size of var
+ *
+ * Return: Always 0
 */
+
 int main(void)
 {
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
