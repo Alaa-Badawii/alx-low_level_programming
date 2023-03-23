@@ -3,7 +3,9 @@
 /**
  * add - add two integers
  *
- * a: first input / b: second input
+ * Description:
+ * a: is the  first input 
+ * b: is the second input
  *
  * Return: sum of a & b
 */
@@ -13,3 +15,4 @@ int add(int a, int b)
 	int plus = a + b;
 	return (plus);
 }
+
