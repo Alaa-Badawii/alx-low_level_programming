@@ -5,13 +5,11 @@
  * Description: this will return the length of a string
  * Return: 0 is success
  */
-
-int _strlen.c(char *c)
+int _strlen(char *s)
 {
-	int len=0;
-	
-	for (;*s++;)
+	int len = 0;
+
+	for (; *s++;)
 		len++;
-	
 	return (len);
 }
