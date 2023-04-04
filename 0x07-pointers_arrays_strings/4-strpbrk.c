@@ -1,34 +1,34 @@
 #include "main.h"
 /**
- * _strspn - a function that gets the length of a prexif substring .
+ * _strpbrk - a function that searches a string for any of a set of byte .
  *
- * @s : pointer to string input .
+ * @s : pointer to input string .
  *
- * @accept: substring prefix to look for .
+ * @accept: pointer to string we searching for in @s .
  *
- * Return: the number of bytes in the initial segment .
+ * Return: pointer to the bytes in @s or NULL if no such byte is found .
  */
-unsigned int _strspn(char *s, char *accept)
+
+char *_strpbrk(char *s, char *accept)
 {
-	int var_1, var_2, var_3;
+	int var_1, var_2;
 
 	var_1 = 0;
 	while (s[var_1] != '\0')
 	{
 		var_2 = 0;
-		var_3 = 1;
 		while (accept[var_2] != '\0')
 		{
 			if (s[var_1] == accept[var_2])
 			{
-				var_3 = 0;
-				break;
+				return (s + var_1);
 			}
-			var_2++;
+			else
+			{
+				var_2++;
+			}
 		}
-		if (var_3 == 1)
-			break;
 		var_1++;
 	}
-	return (var_1);
+	return ('\0');
 }
