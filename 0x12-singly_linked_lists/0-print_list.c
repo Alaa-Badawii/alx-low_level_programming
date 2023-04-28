@@ -1,4 +1,4 @@
-// function that prints all the elements of a list_t list
+// This is a function that prints all the elements of a list_t list
 #include <stdio.h>
 #include "lists.h"
 
@@ -9,20 +9,20 @@
  */
 size_t print_list(const list_t *h)
 {
-    size_t count = 0; 
+    size_t count = 0; // Variable to store the number of nodes
 
-    while (h != NULL) 
+    while (h != NULL) // Loop through the list
     {
-        if (h->str == NULL) 
+        if (h->str == NULL) // If str is NULL
         {
-            printf("[0] (nil)\n"); 
+            printf("[0] (nil)\n"); // Print [0] (nil)
         }
         else // If str is not NULL
         {
-            printf("[%u] %s\n", h->len, h->str);
+            printf("[%u] %s\n", h->len, h->str); // Print the length and the string
         }
-        count++; 
-        h = h->next;
+        count++; // Increment the count
+        h = h->next; // Move to the next node
     }
-    return (count); 
+    return (count); // Return the number of nodes
 }
