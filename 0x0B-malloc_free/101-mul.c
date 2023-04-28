@@ -1,51 +1,79 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+		
+#include "main.h"
+		
 
+		
 /**
- * is_number - checks if a string is a valid number
- * @s: the string to check
- *
- * Return: 1 if true, 0 if false
+ *count_word - helper function to count the number
+ * of words in a string
+ * @s: string to evaluate
+ * 
+ * Return: number of words
  */
-int is_number(char *s)
+int count_word(char *s)
+		
 {
-    while (*s) 
-    {
-        if (!isdigit(*s))
-        {
-            return (0);
-        }
-        s++;
-    }
-    return (1);
+	int flag, c, w;
+	
+	flag = 0;
+	w = 0;
+	
+	for (c = 0; s[c] != '\0'; c++)
+	{
+		if (s[c] == ' ')
+		    flag = 0;
+		else if (flag == 0)
+		    flag = 1;
+        w++;
+	}
+		
 }
-
+return (w);
+}
+		
 /**
- * main - multiplies two positive numbers
- * @argc: the number of arguments
- * @argv: the array of arguments
+ * **strtow - splits a string into words
+ * @str: string to split
  *
- * Return: 0 on success, 98 on error
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
  */
-int main(int argc, char *argv[])
+char **strtow(char *str)
 {
-    int num1, num2, product;
-
-    if (argc != 3)
-    {
-        printf("Error\n");
-        exit(98);
-    }
-    if (!is_number(argv[1]) || !is_number(argv[2]))
-    {
-        printf("Error\n");
-        exit(98);
-    }
-    num1 = atoi(argv[1]);
-    num2 = atoi(argv[2]);
-    product = num1 * num2;
-    printf("%d\n", product);
-    return (0);
+	char **matrix, *tmp;
+	int i, k = 0, len = 0, words, c = 0, start, end;
+		
+	while (*(str + len))
+		len++;
+	words = count_word(str);
+	if (words == 0)
+		return (NULL);
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	if (matrix == NULL)
+		return (NULL);
+		
+	for (i = 0; i <= len; i++)
+	{
+		if (str[i] == ' ' || str[i] == '\0')
+		{
+			if (c)
+			{
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				if (tmp == NULL)
+					return (NULL);
+				while (start < end)
+					*tmp++ = str[start++];
+				*tmp = '\0';
+				matrix[k] = tmp - c;
+				k++;
+				c = 0;
+			}
+		}
+		else if (c++ == 0)
+			start = i;
+	}
+	matrix[k] = NULL;
+	return (matrix);
 }
