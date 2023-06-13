@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - prints the number of arguments 
+ * main - prints the number of arguments
  * @argc: the number of arguments
  * @argv: the array of arguments
  * Return: 0
@@ -14,10 +14,8 @@ int main(int argc, char const *argv[])
 
 	while (argc--)
 	{
-	
 		printf("%s\n", argv[i]);
 		i++;
 	}
-	
-	return (0);	
+	return (0);
 }
