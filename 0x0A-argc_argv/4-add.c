@@ -2,10 +2,10 @@
 #include <stdlib.h>
 /**
  * main-prints the minimum number of coins
- * to make a change for an amount of money
- * @agrc: number of arguments
+ * Description: to make a change for an amount of money
+ * @argc: number of arguments
  * @argv: array of arguments
- * return: 0-success, non-zero-fail.
+ * Return: 0-success, non-zero-fail.
  */
 int main(int argc, char *argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 				return (printf("Error\n"), 1);
 		sum += atoi(argv[argc]);
 	}
-	printf("%d\n", sum);	
-	return(0);
+	printf("%d\n", sum);
+	return (0);
 }
 
