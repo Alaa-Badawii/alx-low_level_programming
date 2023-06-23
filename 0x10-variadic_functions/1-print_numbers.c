@@ -21,7 +21,7 @@ s = va_arg(ptr, int);
 if (s == NULL)
 printf("nil")
 else
-printf("%d",s);
+printf("%d", s);
 if (separator != NULL && i != (n - 1))
 printf("%s", separator);
 }
