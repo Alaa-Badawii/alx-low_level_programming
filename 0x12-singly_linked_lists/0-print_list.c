@@ -7,13 +7,13 @@
  *
  * Return: interger length of string
  */
-int _strlen(char *n)
+int _strlen(char *s)
 {
 	int i = 0;
 
-	if (!n)
+	if (!s)
 		return (0);
-	while (*n++)
+	while (*s++)
 		i++;
 	return (i);
 }
